@@ -25,13 +25,15 @@ This is an Order Management System made for the assessment of the summer interns
 
 
 
+- clone the repository `git clone https://github.com/helloworld877/slash-asessment.git`
+- run `cd slash-asessment`
 - run `npm install` to install the node dependencies
 - then we run the setup script to launch a PostgreSQL Docker container, migrate the Prisma schema and populate the `Users` and `Products` tables (as Product and User creation were not requested in the requirements)
-- For Windows users
-- run `./setup.ps1`
-- For Linux users
-- run  `chmod +x setup.sh` then `./setup.sh`
-- run `npm run start:dev`
+    - For Windows users
+        - run `./setup.ps1`
+    - For Linux users
+        - run  `chmod +x setup.sh` then `./setup.sh`
+        - run `npm run start:dev`
 
 ## Documentation
 
