@@ -11,7 +11,42 @@ import {
 } from '@nestjs/common';
 import { DatabaseService } from '../database/database.service'; // Adjust this path based on your project structure
 import { CartService } from './cart.service'; // Adjust this path based on your project structure
+import {
+  ApiBody,
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiProperty,
+  ApiTags,
+} from '@nestjs/swagger';
 
+class AddToCartDto {
+  @ApiProperty({ type: Number, description: 'The ID of the user' })
+  userId: number;
+
+  @ApiProperty({ type: Number, description: 'The ID of the product' })
+  productId: number;
+}
+
+class UpdateCartItemDto {
+  @ApiProperty({ type: Number, description: 'The ID of the user' })
+  userId: number;
+
+  @ApiProperty({ type: Number, description: 'The ID of the product' })
+  productId: number;
+
+  @ApiProperty({ type: Number, description: 'The new quantity of the product' })
+  quantity: number;
+}
+
+class RemoveFromCartDto {
+  @ApiProperty({ type: Number, description: 'The ID of the user' })
+  userId: number;
+
+  @ApiProperty({ type: Number, description: 'The ID of the product' })
+  productId: number;
+}
+
+@ApiTags('cart')
 @Controller('api/cart')
 export class CartController {
   constructor(
@@ -19,7 +54,11 @@ export class CartController {
     private readonly prisma: DatabaseService,
   ) {}
 
+  @ApiCreatedResponse({
+    description: 'item added to cart',
+  })
   @Post('add')
+  @ApiBody({ type: AddToCartDto })
   async addToCart(@Body() addToCartDto: AddToCartDto) {
     const { userId, productId } = addToCartDto;
 
@@ -100,6 +139,9 @@ export class CartController {
     return { message: 'Product added to cart successfully' };
   }
 
+  @ApiOkResponse({
+    description: "items in the user's cart are shown ",
+  })
   @Get(':userId')
   async getCart(@Param('userId') userId: string) {
     // Convert userId to a number if necessary
@@ -111,7 +153,9 @@ export class CartController {
     return cart;
   }
 
+  @ApiOkResponse({ description: 'quantity updated' })
   @Put('update')
+  @ApiBody({ type: UpdateCartItemDto })
   async updateCartItem(@Body() updateCartItemDto: UpdateCartItemDto) {
     const { userId, productId, quantity } = updateCartItemDto;
 
@@ -149,10 +193,11 @@ export class CartController {
     }
   }
 
+  @ApiOkResponse({ description: "Product removed from user's cart" })
   @Delete('remove')
-  async removeFromCart(@Body() body: { userId: number; productId: number }) {
+  async removeFromCart(@Body() removeFromCartDto: RemoveFromCartDto) {
     try {
-      const { userId, productId } = body;
+      const { userId, productId } = removeFromCartDto;
       const result = await this.cartService.removeProductFromCart(
         userId,
         productId,
@@ -162,15 +207,4 @@ export class CartController {
       throw new BadRequestException(`${error}`);
     }
   }
-}
-
-interface AddToCartDto {
-  userId: number;
-  productId: number;
-}
-
-interface UpdateCartItemDto {
-  userId: number;
-  productId: number;
-  quantity: number;
 }

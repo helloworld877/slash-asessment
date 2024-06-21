@@ -238,6 +238,8 @@ export class CartService {
       throw new Error('Product not found in cart');
     }
 
+    const productQuantity = cartProductItem.quantity;
+
     // Remove the product from the cart
     await this.prisma.cartProduct.delete({
       where: {
@@ -246,6 +248,11 @@ export class CartService {
           productId: productId,
         },
       },
+    });
+
+    await this.prisma.products.update({
+      where: { productId: productId },
+      data: { stock: { increment: productQuantity } }, // Increment the stock by the quantity removed
     });
 
     return this.findCartByUserId(userId);
