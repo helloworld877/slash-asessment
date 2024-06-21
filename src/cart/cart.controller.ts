@@ -15,6 +15,7 @@ import {
   ApiBody,
   ApiCreatedResponse,
   ApiOkResponse,
+  ApiOperation,
   ApiProperty,
   ApiTags,
 } from '@nestjs/swagger';
@@ -46,7 +47,7 @@ class RemoveFromCartDto {
   productId: number;
 }
 
-@ApiTags('cart')
+@ApiTags('Cart')
 @Controller('api/cart')
 export class CartController {
   constructor(
@@ -54,6 +55,10 @@ export class CartController {
     private readonly prisma: DatabaseService,
   ) {}
 
+  @ApiOperation({
+    summary:
+      "Add a product to the user's cart or update quantity if already in cart",
+  })
   @ApiCreatedResponse({
     description: 'item added to cart',
   })
@@ -139,6 +144,7 @@ export class CartController {
     return { message: 'Product added to cart successfully' };
   }
 
+  @ApiOperation({ summary: "Retrieve the user's cart by userId" })
   @ApiOkResponse({
     description: "items in the user's cart are shown ",
   })
@@ -153,6 +159,7 @@ export class CartController {
     return cart;
   }
 
+  @ApiOperation({ summary: 'Update the quantity of a product in the cart' })
   @ApiOkResponse({ description: 'quantity updated' })
   @Put('update')
   @ApiBody({ type: UpdateCartItemDto })
@@ -193,6 +200,9 @@ export class CartController {
     }
   }
 
+  @ApiOperation({
+    summary: "Remove a product from the user's cart",
+  })
   @ApiOkResponse({ description: "Product removed from user's cart" })
   @Delete('remove')
   async removeFromCart(@Body() removeFromCartDto: RemoveFromCartDto) {
