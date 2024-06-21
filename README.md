@@ -66,6 +66,7 @@ To see the documentation visit <http://localhost:3000/api/> in your browser when
 
 
 - To view the database you can connect to the database using PgAdmin 4
+- the Database username is `root` and the password is `password`
 - The application runs on port `3000`
 - The PostgreSQL docker container runs on port `5432`
 - Ensure that ports `3000` and `5432` are open and have no apps running on them before running the project
