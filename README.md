@@ -1,12 +1,11 @@
 # Order Management System 
 ## Description
 
----
 This is an Order Management System made for the assessment of the summer internship at Slash
 
 ## Technology Stack
 
----
+
 
 - NestJs
 - Prisma
@@ -16,7 +15,7 @@ This is an Order Management System made for the assessment of the summer interns
 
 ## Dependencies
 
----
+
 
 - NPM
 - NodeJs
@@ -24,7 +23,7 @@ This is an Order Management System made for the assessment of the summer interns
 
 ## Setting Up
 
----
+
 
 - run `npm install` to install the node dependencies
 - then we run the setup script to launch a PostgreSQL Docker container, migrate the Prisma schema and populate the `Users` and `Products` tables (as Product and User creation were not requested in the requirements)
@@ -36,12 +35,12 @@ This is an Order Management System made for the assessment of the summer interns
 
 ## Documentation
 
----
+
 To see the documentation visit <http://localhost:3000/api/> in your browser when the application is running
 
 ## Testing
 
----
+
 
 - install the "Thunder client" VScode extension
 - go to the Thunder Client tab you can find it on the left (bottom icon)
@@ -62,7 +61,7 @@ To see the documentation visit <http://localhost:3000/api/> in your browser when
 
 ## Notes
 
----
+
 
 - To view the database you can connect to the database using PgAdmin 4
 - The application runs on port `3000`
