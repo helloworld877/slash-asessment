@@ -45,11 +45,14 @@ To see the documentation visit <http://localhost:3000/api/> in your browser when
 
 - install the "Thunder client" VScode extension
 - go to the Thunder Client tab you can find it on the left (bottom icon)
-![[Pasted image 20240621203332.png|]]
+![image](https://github.com/helloworld877/slash-asessment/assets/74651584/f84fc954-22ba-4ce1-99e5-66e95610208c)
+
 - click on the icon and go to the collections tab and import the collection JSON (`thunder-collection_Slash Assessment.JSON`) found in the main directory of the repository
-![[Pasted image 20240621203457.png]]
+![image](https://github.com/helloworld877/slash-asessment/assets/74651584/542cbba6-49ac-4cf4-8bd6-9a715ea628f1)
+
 - After importing you will find pre-configured requests that you can edit to test the application
-![[Pasted image 20240621203652.png]]
+![image](https://github.com/helloworld877/slash-asessment/assets/74651584/231c403e-e170-47fe-b9a6-5c956a19e1bb)
+
 
 ## Notes
 
