@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres
+    container_name: slash-asessment
     env_file:
       - .env
     ports:
