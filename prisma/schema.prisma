@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  userId   Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+  address  String
+  cart     Cart?
+}
+
+model Products {
+  productId   Int            @id @default(autoincrement())
+  name        String         @unique
+  description String
+  price       Float
+  stock       Int
+  CartItems   CartProduct[]
+  OrderItems  OrderProduct[]
+}
+
+model Orders {
+  orderId   Int            @id @default(autoincrement())
+  orderDate DateTime       @default(now())
+  status    Status
+  products  OrderProduct[]
+}
+
+model Cart {
+  cartId   Int           @id @default(autoincrement())
+  userId   Int           @unique
+  user     Users         @relation(fields: [userId], references: [userId])
+  products CartProduct[]
+}
+
+model CartProduct {
+  cartId    Int
+  productId Int
+  quantity  Int
+  cart      Cart     @relation(fields: [cartId], references: [cartId])
+  product   Products @relation(fields: [productId], references: [productId])
+
+  @@id([cartId, productId])
+}
+
+model OrderProduct {
+  orderId   Int
+  productId Int
+  quantity  Int
+  order     Orders   @relation(fields: [orderId], references: [orderId])
+  product   Products @relation(fields: [productId], references: [productId])
+
+  @@id([orderId, productId])
+}
+
+enum Status {
+  ORDERED
+  ACCEPTED
+  SHIPPING
+  DELIVERED
+}

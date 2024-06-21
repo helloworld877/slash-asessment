@@ -1,0 +1,23 @@
+
+
+To populate the Users table enter:
+
+INSERT INTO public."Users" (name, email, password, address)
+VALUES
+  ('John Doe', 'john.doe@example.com', 'password1', '123 Main St, Anytown'),
+  ('Jane Smith', 'jane.smith@example.com', 'password2', '456 Elm St, Otherville'),
+  ('Michael Johnson', 'michael.johnson@example.com', 'password3', '789 Oak St, Anycity'),
+  ('Emily Brown', 'emily.brown@example.com', 'password4', '321 Pine St, Somewhere'),
+  ('David Wilson', 'david.wilson@example.com', 'password5', '654 Birch St, Nowhere');
+
+##############################################################################
+to populate the products table enter:
+
+INSERT INTO public."Products" (name, description, price, Stock)
+VALUES
+  ('Gold Necklace', 'Elegant gold necklace with intricate design', 299.99, 50),
+  ('Diamond Ring', 'Stunning diamond ring with platinum band', 999.99, 30),
+  ('Silver Pendant', 'Simple and stylish silver pendant', 49.99, 100),
+  ('Pearl Earrings', 'Classic pearl earrings for any occasion', 149.99, 80),
+  ('Ruby Bracelet', 'Luxurious ruby bracelet for a touch of glamour', 399.99, 20);
+
