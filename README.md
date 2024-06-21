@@ -33,7 +33,7 @@ This is an Order Management System made for the assessment of the summer interns
         - run `./setup.ps1`
     - For Linux users
         - run  `chmod +x setup.sh` then `./setup.sh`
-        - run `npm run start:dev`
+- run `npm run start:dev`
 
 ## Documentation
 
@@ -68,5 +68,6 @@ To see the documentation visit <http://localhost:3000/api/> in your browser when
 - To view the database you can connect to the database using PgAdmin 4
 - The application runs on port `3000`
 - The PostgreSQL docker container runs on port `5432`
+- Ensure that ports `3000` and `5432` are open and have no apps running on them before running the project
 - to stop the docker container from running run `docker-compose down`
 - This will delete the container and the data will not persist
