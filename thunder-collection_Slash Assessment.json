@@ -1,0 +1,171 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Slash Assessment",
+    "collectionId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+    "dateExported": "2024-06-21T17:18:29.068Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c4671a2e-df44-4159-8ef4-69ece692aadb",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "user order history",
+            "url": "http://localhost:3000/api/users/2/orders",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-06-21T17:15:39.115Z",
+            "modified": "2024-06-21T17:15:39.115Z",
+            "headers": []
+        },
+        {
+            "_id": "1da21625-75df-414d-9edb-3577f64d9d29",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Apply coupon discount",
+            "url": "http://localhost:3000/api/orders/apply-coupon",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-06-21T17:16:19.974Z",
+            "modified": "2024-06-21T17:16:19.974Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"orderId\":1,\n  \"discount\":0.3\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "4fc18d22-996f-43fe-9111-89000b98611f",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Change order status",
+            "url": "http://localhost:3000/api/orders/1/status",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-06-21T17:16:33.724Z",
+            "modified": "2024-06-21T17:16:33.724Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\":\"SHIPPING\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "95025ec1-4fc5-478e-b135-c0c711da8741",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Get order by id",
+            "url": "http://localhost:3000/api/orders/2",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-06-21T17:16:45.860Z",
+            "modified": "2024-06-21T17:16:45.860Z",
+            "headers": []
+        },
+        {
+            "_id": "fcdfa740-8b75-4168-b5bc-2839d01f19ee",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Create order",
+            "url": "http://localhost:3000/api/orders",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-06-21T17:17:07.414Z",
+            "modified": "2024-06-21T17:17:07.414Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\":2\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f9bfa798-6790-490a-a7db-3b148dab6903",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Create order",
+            "url": "http://localhost:3000/api/orders",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-06-21T17:17:27.921Z",
+            "modified": "2024-06-21T17:17:27.922Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\":2\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f4e16ee2-7abc-4cb0-b194-860fa892c900",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Update cart",
+            "url": "http://localhost:3000/api/cart/update",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-06-21T17:17:40.409Z",
+            "modified": "2024-06-21T17:17:40.409Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\":1,\n  \"productId\":4,\n  \"quantity\":76\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "50f10034-f3d4-446b-be08-ee741e6c9f2f",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Get cart",
+            "url": "http://localhost:3000/api/cart/2",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-06-21T17:17:55.002Z",
+            "modified": "2024-06-21T17:17:55.002Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\":2,\n  \"productId\":3\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "be7ea84e-2d21-4c90-ab34-e145b382938d",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Add to cart",
+            "url": "http://localhost:3000/api/cart/add",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-06-21T17:18:04.839Z",
+            "modified": "2024-06-21T17:18:04.839Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\":2,\n  \"productId\":1\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "dfc438be-ff65-4b4e-af3c-2ca86b1f01c8",
+            "colId": "bbdb589e-ad74-4d7b-94a1-1fec4866aa03",
+            "containerId": "",
+            "name": "Delete item from cart",
+            "url": "http://localhost:3000/api/cart/remove",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-06-21T17:18:21.623Z",
+            "modified": "2024-06-21T17:18:21.623Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\":2,\n  \"productId\":4\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "HmenGW6veocEMexrLLu9MqNUo-B_aVHCi3O94uSdt9FAiGad8Ma7Z243zeshkL6ELAxeeDXlJ3maCKPARBUD2g"
+}
